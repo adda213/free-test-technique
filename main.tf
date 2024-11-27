@@ -64,7 +64,6 @@ resource "helm_release" "adda-nginx_ingress" {
     value = scaleway_lb_ip.adda-nginx_ip.ip_address
   }
 
-  // enable proxy protocol to get client ip addr instead of loadbalancer one
   set {
     name = "controller.config.use-proxy-protocol"
     value = "true"
